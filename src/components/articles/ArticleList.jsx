@@ -1,22 +1,24 @@
-import React, {Component} from 'react';
+import React from 'react';
+import {Grid, Cell} from 'react-mdl';
 
 import Article from './Article';
 
-export default class ArticleList extends Component {
+export default class ArticleList extends React.Component {
   render() {
     const {articles} = this.props;
 
     return (
-      <div className="container">
-        <h3>Articles</h3>
-        <ul>
-          {articles.map(article => {
-            return (
-              <Article key={article.id} {...article} />
-            );
-          })}
-        </ul>
-      </div>
+      <Grid component="section" className="section--center" shadow={0} noSpacing>
+        <Cell col={12} tablet={12} phone={12}>
+          <ul>
+            {articles.map(article => {
+              return (
+                <Article key={article.id} {...article} />
+              );
+            })}
+          </ul>
+        </Cell>
+      </Grid>
     );
   }
 }
