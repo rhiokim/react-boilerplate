@@ -73,9 +73,15 @@
     "lint": "eslint --format=node_modules/eslint-formatter-pretty 'src/**/*.@(js|jsx)'",
     "lint:msg": "validate-commit-msg",
     "build": "node scripts/build.js",
+    "deploy": "npm run build && npm run docker:build",
     "test": "node scripts/test.js --env=jsdom",
     "commit": "git cz",
-    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 1"
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 1",
+    "docker:build": "docker build --tag react-app -f ./config/docker/Dockerfile . && npm run docker:images",
+    "docker:images": "docker images | grep react-app",
+    "docker:run": "docker run -dit -p 8081:80 --name react-app react-app:latest",
+    "docker:rm": "docker rm -f react-app",
+    "docker": "npm run docker:rm && npm run docker:build && npm run docker:run"
   },
   "jest": {
     "moduleFileExtensions": [
