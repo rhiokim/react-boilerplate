@@ -6,6 +6,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - Support git hook `pre-commit` used to lint and test your code
 - Use [conventional-changelog](https://github.com/ajoslin/conventional-changelog) to generate `CHANGELOG.md`
 - Support git hook `commit-msg` used to lint your [commit message](https://github.com/kentcdodds/validate-commit-msg)
+- Use [eslint-pretty-formatter](https://github.com/sindresorhus/eslint-formatter-pretty) to show results for lint
+- If you installed Docker you are able to use some useful npm run-script to make the docker image
 
 ## How to use
 
@@ -23,9 +25,11 @@ Then, launch the boilerplate app.
 $ npm start
 ```
 
-You should see a new browser tap opening and a title of "React Boilerplat" in http://localhost:3000.
+You should see a new browser tap opening and a title of "React Boilerplate" in http://localhost:3000.
 
 From there, you start to develop your own code in the `src` directory. When you finish coding, use `npm run build` to build the static files.
+
+And you want to make the docker image with production files, use `npm run deploy`.
 
 When committing your code, you should use [AngularJS's commit message convention](https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md#-git-commit-guidelines). Otherwise, the repo will throw an error. If you use `npm run commit` instead of `git commit`, the command will help you to produce a formatted commit message.
 
@@ -40,16 +44,15 @@ $ npm run build
 
 ```bash
 $ npm test
-$ npm test:watch
-$ npm test:jenkins
-$ npm test:karma
 ```
 
 ## Dockerize
 
 ```bash
-$ npm run docker-build
-$ npm run docker-run
+$ npm run docker:build  // build image
+$ npm run docker:run    // run container
+$ npm run docker:rm     // remove running container
+$ npm run docker        // run build, rm, run at once
 ```
 
 ## License
