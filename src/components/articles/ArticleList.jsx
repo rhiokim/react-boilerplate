@@ -7,16 +7,20 @@ export default class ArticleList extends Component {
     const {articles} = this.props;
 
     return (
-      <div className="container">
-        <h3>Articles</h3>
-        <ul>
+      <table className="table-striped">
+        <thead>
+          <tr>
+            <th>Title</th>
+          </tr>
+        </thead>
+        <tbody>
           {articles.map(article => {
             return (
               <Article key={article.id} {...article} />
             );
           })}
-        </ul>
-      </div>
+        </tbody>
+      </table>
     );
   }
 }

@@ -8,16 +8,23 @@ export default class UserList extends Component {
     console.log(users);
 
     return (
-      <div className="container">
-        <h3>Users</h3>
-        <ul>
+      <table className="table-striped">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Website</th>
+          </tr>
+        </thead>
+        <tbody>
           {users.map(user => {
             return (
               <UserItem key={user.id} {...user} />
             );
           })}
-        </ul>
-      </div>
+        </tbody>
+      </table>
     );
   }
 }

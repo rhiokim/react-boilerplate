@@ -7,6 +7,7 @@ import {syncHistoryWithStore} from 'react-router-redux';
 /**
  * Customized CSS for App initilization
  */
+import 'photon/dist/css/photon.css';
 // import './assets/css/normalize.css';
 // import './assets/less/_.less';
 // import './assets/sass/_.scss';
