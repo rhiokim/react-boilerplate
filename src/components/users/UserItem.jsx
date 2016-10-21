@@ -2,10 +2,15 @@ import React, {Component} from 'react';
 
 export default class UserItem extends Component {
   render() {
-    const {name, email} = this.props;
+    const {name, email, phone, website} = this.props;
 
     return (
-      <li onClick={this.props.onClick}>{name}: {email}</li>
+      <tr>
+        <td onClick={this.props.onClick}>{name}</td>
+        <td>{email}</td>
+        <td>{phone}</td>
+        <td>{website}</td>
+      </tr>
     );
   }
 }
