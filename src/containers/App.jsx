@@ -1,9 +1,8 @@
-/* global __DEV__ */
 import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
-require('./App.css');
+import './App.css';
 
 export default class App extends React.Component {
   constructor(props) {
