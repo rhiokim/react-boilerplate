@@ -1,8 +1,8 @@
-import React, {Component} from 'react';
+import React from 'react';
 
 import Article from './Article';
 
-export default class ArticleList extends Component {
+export default class ArticleList extends React.Component {
   render() {
     const {articles} = this.props;
 
