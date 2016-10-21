@@ -10,7 +10,7 @@ class Articles extends Component {
   constructor(props) {
     super(props);
 
-    this.handleChange = this.handleChange.bind(this);
+    this.handleChangeClientState = this.handleChangeClientState.bind(this);
   }
 
   componentWillMount() {
@@ -23,9 +23,10 @@ class Articles extends Component {
   componentWillReceiveProps() {
   }
 
-  handleChange() {
+  handleChangeClientState(newState) {
+    console.log(newState);
   }
-
+  
   render() {
     const {articles} = this.props;
     return (
