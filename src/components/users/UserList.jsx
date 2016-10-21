@@ -1,11 +1,10 @@
-import React, {Component} from 'react';
+import React from 'react';
 
 import UserItem from './UserItem';
 
-export default class UserList extends Component {
+export default class UserList extends React.Component {
   render() {
     const {users} = this.props;
-    console.log(users);
 
     return (
       <table className="table-striped">

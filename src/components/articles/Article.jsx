@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
+import React from 'react';
 
-export default class Article extends Component {
+export default class Article extends React.Component {
   render() {
     const {title} = this.props;
 
