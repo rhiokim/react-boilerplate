@@ -46,6 +46,16 @@ $ npm run build
 $ npm test
 ```
 
+## Run with nwjs
+
+> Please install `nwjs` npm module globally on your system [nwjs version manager](https://www.npmjs.com/package/nwjs)
+
+```bash
+$ npm run build
+$ nwjc build/static/js/main.[hash].js app.bin
+$ nw build
+```
+
 ## Dockerize
 
 ```bash

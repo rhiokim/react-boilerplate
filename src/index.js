@@ -12,6 +12,12 @@ import 'photon/dist/css/photon.css';
 // import './assets/less/_.less';
 // import './assets/sass/_.scss';
 
+/**
+ *
+ */
+import Sys from './nw/system';
+import Menu from './nw/menu/Menu';
+
 import routes from './routes';
 import configureStore from './store/configureStore';
 
