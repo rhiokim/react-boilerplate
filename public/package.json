@@ -1,0 +1,49 @@
+{
+  "main": "index.html",
+  "name": "nwjs application",
+  "description": "react boilerplate with nwjs",
+  "version": "1.0.0",
+  "keywords": [
+    "editor"
+  ],
+  "window": {
+    "icon": "logo.png",
+    "show": true,
+    "width": 800,
+    "height": 600,
+    "min_width": 800,
+    "min_height": 600,
+    "frame": false
+  },
+  "single-instance": true,
+  "webkit": {
+    "plugin": true
+  },
+  "user-agent": "%name/%ver (%osinfo) nwjs/%nwver AppleWebKit/%webkit_ver",
+  "chromium-args": "--enable-threaded-compositing --disable-gpu",
+  "maintainers": [
+    {
+      "name": "Rhio Kim",
+      "email": "rhio.kim@gmail.com"
+    }
+  ],
+  "licenses": [
+    {
+      "type": "GPLv2",
+      "url": "http://www.example.com/licenses/gpl.html"
+    }
+  ],
+  "repositories": [
+    {
+      "type": "git",
+      "url": "git@github.com:rhiokim/nwjs-react-webpack-boilerplate.git"
+    }
+  ],
+  "dependencies": {},
+  "config": {
+    "version": "",
+    "node_modules": "",
+    "site": "http://nwjs.io"
+  },
+  "devDependencies": {}
+}
