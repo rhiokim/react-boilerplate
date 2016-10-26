@@ -66,7 +66,13 @@ master
 
 ## Screenshot
 * with photon
-![photon home](assets/images/photon-home.png)
+![photon home](assets/images/photon.png)
+* with material
+![photon home](assets/images/material.png)
+* with ant-design
+![photon home](assets/images/ant-design.png)
+* with photon and nwjs
+![photon home](assets/images/nwjs.png)
 
 ## License
 
