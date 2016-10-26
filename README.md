@@ -55,7 +55,14 @@ $ npm run docker:rm     // remove running container
 $ npm run docker        // run build, rm, run at once
 ```
 
-## W
+## Branch Structure
+
+master
+\_nw
+\_material
+\_ant-design
+\_photon
+  \_photon-with-nwjs 
 
 ## License
 

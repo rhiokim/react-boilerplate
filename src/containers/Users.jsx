@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import Helmet from 'react-helmet';
@@ -6,7 +6,7 @@ import Helmet from 'react-helmet';
 import * as UserActions from '../actions/user';
 import UserList from '../components/users/UserList';
 
-class Users extends Component {
+class Users extends React.Component {
   constructor(props) {
     super(props);
 
