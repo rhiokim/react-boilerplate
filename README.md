@@ -8,6 +8,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - Support git hook `commit-msg` used to lint your [commit message](https://github.com/kentcdodds/validate-commit-msg)
 - Use [eslint-pretty-formatter](https://github.com/sindresorhus/eslint-formatter-pretty) to show results for lint
 - If you installed Docker you are able to use some useful npm run-script to make the docker image
+- Support material design. Please look into `material` branch [react-mdl](https://github.com/react-mdl/react-mdl)
 
 ## How to use
 
@@ -33,7 +34,6 @@ And you want to make the docker image with production files, use `npm run deploy
 
 When committing your code, you should use [AngularJS's commit message convention](https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md#-git-commit-guidelines). Otherwise, the repo will throw an error. If you use `npm run commit` instead of `git commit`, the command will help you to produce a formatted commit message.
 
-
 ## How to build
 
 ```bash
@@ -54,6 +54,15 @@ $ npm run docker:run    // run container
 $ npm run docker:rm     // remove running container
 $ npm run docker        // run build, rm, run at once
 ```
+
+## Branch Structure
+
+master
+\_nw
+\_material
+\_ant-design
+\_photon
+  \_photon-with-nwjs (photon + nw)
 
 ## License
 

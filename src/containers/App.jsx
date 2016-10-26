@@ -6,9 +6,6 @@ import {
   Icon, Grid, Cell, HeaderRow, Drawer
 } from 'react-mdl';
 
-// import Header from '../components/Header';
-// import Footer from '../components/Footer';
-
 import './App.css';
 
 export default class App extends React.Component {

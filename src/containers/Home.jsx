@@ -6,8 +6,8 @@ import {
   FooterLinkList, Grid, Cell
 } from 'react-mdl';
 
-
 import {getColorClass, getTextColorClass} from 'react-mdl/lib/utils/palette';
+
 export default class Home extends React.Component {
   render() {
     return (

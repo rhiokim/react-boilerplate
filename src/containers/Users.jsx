@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import classNames from 'classnames';
@@ -10,7 +10,7 @@ import {getColorClass, getTextColorClass} from 'react-mdl/lib/utils/palette';
 import * as UserActions from '../actions/user';
 import UserList from '../components/users/UserList';
 
-class Users extends Component {
+class Users extends React.Component {
   constructor(props) {
     super(props);
 
@@ -58,9 +58,9 @@ class Users extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  return {users: state.userReducer.users};
-};
+const mapStateToProps = state => ({
+  users: state.userReducer.users
+});
 
 const mapDispatchToProps = dispatch => bindActionCreators(UserActions, dispatch);
 

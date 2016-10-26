@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
+import React from 'react';
 
-export default class UserItem extends Component {
+export default class UserItem extends React.Component {
   render() {
     const {name, email} = this.props;
 
