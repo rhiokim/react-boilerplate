@@ -64,6 +64,10 @@ master
 \_photon
   \_photon-with-nwjs (photon + nw)
 
+## Screenshot
+* with photon
+![photon home](assets/images/photon-home.png)
+
 ## License
 
 MIT
