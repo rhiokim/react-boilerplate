@@ -62,7 +62,7 @@ master
 \_material
 \_ant-design
 \_photon
-  \_photon-with-nwjs 
+  \_photon-with-nwjs (photon + nw)
 
 ## License
 
