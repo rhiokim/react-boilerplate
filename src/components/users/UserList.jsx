@@ -1,4 +1,5 @@
 import React from 'react';
+import {Row} from 'antd';
 
 import UserItem from './UserItem';
 
@@ -7,16 +8,13 @@ export default class UserList extends React.Component {
     const {users} = this.props;
 
     return (
-      <div className="container">
-        <h3>Users</h3>
-        <ul>
-          {users.map(user => {
-            return (
-              <UserItem key={user.id} {...user} />
-            );
-          })}
-        </ul>
-      </div>
+      <Row style={{margin: '10px'}}>
+        {users.map(user => {
+          return (
+            <UserItem key={user.id} {...user} />
+          );
+        })}
+      </Row>
     );
   }
 }
