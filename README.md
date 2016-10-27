@@ -66,13 +66,13 @@ master
 ```
 ## Screenshot
 * with photon
-![photon home](/rhiokim/react-boilerplate/raw/gh-pages/assets/images/photon.png)
+![photon home](https://raw.githubusercontent.com/rhiokim/react-boilerplate/gh-pages/assets/images/photon.png)
 * with material
-![photon home](/rhiokim/react-boilerplate/raw/gh-pages/assets/images/material.png)
+![photon home](https://raw.githubusercontent.com/rhiokim/react-boilerplate/gh-pages/assets/images/material.png)
 * with ant-design
-![photon home](/rhiokim/react-boilerplate/raw/gh-pages/assets/images/ant-design.png)
+![photon home](https://raw.githubusercontent.com/rhiokim/react-boilerplate/gh-pages/assets/images/ant-design.png)
 * with photon and nwjs
-![photon home](/rhiokim/react-boilerplate/raw/gh-pages/assets/images/nwjs.png)
+![photon home](https://raw.githubusercontent.com/rhiokim/react-boilerplate/gh-pages/assets/images/nwjs.png)
 
 ## License
 
