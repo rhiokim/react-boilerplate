@@ -56,13 +56,23 @@ $ npm run docker        // run build, rm, run at once
 ```
 
 ## Branch Structure
-
+```
 master
-\_nw
-\_material
-\_ant-design
-\_photon
-  \_photon-with-nwjs (photon + nw)
+  \_ nw
+  \_ material
+  \_ ant-design
+  \_ photon
+    \_ photon-with-nwjs (photon + nw)
+```
+## Screenshot
+* with photon
+![photon home](/rhiokim/react-boilerplate/raw/gh-pages/assets/images/photon.png)
+* with material
+![photon home](/rhiokim/react-boilerplate/raw/gh-pages/assets/images/material.png)
+* with ant-design
+![photon home](/rhiokim/react-boilerplate/raw/gh-pages/assets/images/ant-design.png)
+* with photon and nwjs
+![photon home](/rhiokim/react-boilerplate/raw/gh-pages/assets/images/nwjs.png)
 
 ## License
 
