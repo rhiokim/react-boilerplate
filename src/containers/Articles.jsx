@@ -1,3 +1,4 @@
+/* global pkginfo */
 import React, {Component} from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
@@ -68,6 +69,16 @@ class Articles extends Component {
           title="Article List"
           titleTemplate="App - %s"
           defaultTitle="My Default Title"
+          meta={[
+            {name: 'description', content: pkginfo.description},
+            {name: 'version', content: pkginfo.version},
+            {name: 'hompage', content: pkginfo.hompage},
+            {name: 'product', content: pkginfo.name},
+            {name: 'keywords', content: pkginfo.keywords},
+            {name: 'author', content: pkginfo.author},
+            {name: 'license', content: pkginfo.license},
+            {name: 'sha', content: pkginfo.sha}
+          ]}
           onChangeClientState={this.handleChangeClientState} />
         <Table
           loading={loading}

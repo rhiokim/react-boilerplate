@@ -3,6 +3,24 @@
 
 var REACT_APP = /^REACT_APP_/i;
 
+function getPkgInfo() {
+  var pkg = require('../package.json');
+  var getRepoInfo = require('git-repo-info');
+  var info = getRepoInfo();
+  var keywords = pkg.keywords && pkg.keywords.join(', ') || [];
+
+  return {
+    'name': `"${pkg.name}"`,
+    'version': `"${pkg.version}"`,
+    'description': `"${pkg.description || ''}"`,
+    'keywords': `"${keywords}"`,
+    'author': `"${pkg.author}"`,
+    'license': `"${pkg.license}"`,
+    'homepage': `"${pkg.homepage}"`,
+    'sha': `"${info.sha}"`
+  }
+}
+
 function getClientEnvironment(publicUrl) {
   var processEnv = Object
     .keys(process.env)
@@ -22,7 +40,7 @@ function getClientEnvironment(publicUrl) {
       // images into the `src` and `import` them in code to get their paths.
       'PUBLIC_URL': JSON.stringify(publicUrl)
     });
-  return {'process.env': processEnv};
+  return {'process.env': processEnv, 'pkginfo': getPkgInfo()};
 }
 
 module.exports = getClientEnvironment;
