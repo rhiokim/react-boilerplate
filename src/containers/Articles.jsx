@@ -32,7 +32,7 @@ class Articles extends React.Component {
   handleChangeClientState(newState) {
     console.log(newState);
   }
-  
+
   render() {
     const {articles} = this.props;
     return (
