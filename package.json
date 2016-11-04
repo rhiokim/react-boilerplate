@@ -1,6 +1,6 @@
 {
   "name": "react-boilerplate",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "private": true,
   "devDependencies": {
     "autoprefixer": "6.5.1",
