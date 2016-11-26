@@ -8,7 +8,6 @@ var InterpolateHtmlPlugin = require('react-dev-utils/InterpolateHtmlPlugin');
 var WatchMissingNodeModulesPlugin = require('react-dev-utils/WatchMissingNodeModulesPlugin');
 var getClientEnvironment = require('./env');
 var paths = require('./paths');
-var getCustomConfig = require('./get-custom-config');
 
 // Webpack uses `publicPath` to determine where the app is being served from.
 // In development, we always serve from the root. This makes config easier.
@@ -19,8 +18,6 @@ var publicPath = '/';
 var publicUrl = '';
 // Get environment variables to inject into our app.
 var env = getClientEnvironment(publicUrl);
-//Get custom configuration for injecting plugins, presets and loaders
-var customConfig = getCustomConfig(false);
 
 // This is the development configuration.
 // It is focused on developer experience and fast rebuilds.
@@ -119,7 +116,15 @@ module.exports = {
       // in development "style" loader enables hot editing of CSS.
       {
         test: /\.css$/,
-        loader: customConfig.values.CSS_MODULES ? customConfig.values.CSS_MODULES.dev : 'style!css!postcss'
+        loader: 'style!css?importLoaders=1!postcss'
+      },
+      {
+        test: /\.less$/,
+        loader: 'style!css!less!postcss'
+      },
+      {
+        test: /\.scss$/,
+        loader: 'style!css!sass!postcss'
       },
       // JSON is not enabled by default in Webpack but both Node and Browserify
       // allow it implicitly so we also enable it.
@@ -147,7 +152,7 @@ module.exports = {
           name: 'static/media/[name].[hash:8].[ext]'
         }
       }
-    ].concat(customConfig.loaders)
+    ]
   },
 
   // We use PostCSS for autoprefixing only.
@@ -189,7 +194,7 @@ module.exports = {
     // makes the discovery automatic so you don't have to restart.
     // See https://github.com/facebookincubator/create-react-app/issues/186
     new WatchMissingNodeModulesPlugin(paths.appNodeModules)
-  ].concat(customConfig.plugins),
+  ],
   // Some libraries import Node modules but don't use them in the browser.
   // Tell Webpack to provide empty mocks for them so importing them works.
   node: {
