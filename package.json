@@ -1,6 +1,14 @@
 {
   "name": "react-boilerplate",
   "version": "0.3.1",
+  "description": "The React-Boilerplate is boilerplate app based on official create-react-app cli of Facebook",
+  "keywords": [
+    "react",
+    "create-react-app",
+    "webpack"
+  ],
+  "author": "Rhio Kim <rhio.kim@gmail.com>",
+  "license": "ISC",
   "private": true,
   "devDependencies": {
     "autoprefixer": "6.5.1",
