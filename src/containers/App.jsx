@@ -1,4 +1,6 @@
 import React from 'react';
+import {Container} from 'semantic-ui-react';
+
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
@@ -15,11 +17,11 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <Container>
         <Header />
-        <div className="route">
+          <Container>
           {this.props.children}
-        </div>
+          </Container>
         <Footer />
         {
           (() => {
@@ -29,7 +31,7 @@ export default class App extends React.Component {
             }
           })()
         }
-      </div>
+      </Container>
     );
   }
 }
