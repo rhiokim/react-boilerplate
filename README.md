@@ -63,6 +63,7 @@ master
   \_ ant-design
   \_ photon
     \_ photon-with-nwjs (photon + nw)
+  \_ semantic-ui
 ```
 ## Screenshot
 * with photon
