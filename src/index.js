@@ -18,10 +18,9 @@ import configureStore from './store/configureStore';
 const store = configureStore();
 const history = syncHistoryWithStore(hashHistory, store);
 
-const root = document.body.appendChild(document.createElement('div'));
 const App = () =>
   <Provider store={store}>
     <Router history={history} routes={routes} />
   </Provider>;
 
-render(<App />, root);
+render(<App />, document.getElementById('root'));
