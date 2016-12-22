@@ -10,7 +10,7 @@ import Form from './containers/Form';
 export default (
   <Route path="/" component={App}>
     <IndexRoute component={Home} />
-    <Route path="/users" component={Users}i />
+    <Route path="/users" component={Users} />
     <Route path="/articles" component={Articles} />
     <Route path="/form" component={Form} />
   </Route>

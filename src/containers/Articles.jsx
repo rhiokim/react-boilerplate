@@ -4,6 +4,8 @@ import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import Helmet from 'react-helmet';
 
+import pkginfo from '../../package.json';
+
 import * as ArticleActions from '../actions/article';
 import ArticleList from '../components/articles/ArticleList';
 
@@ -44,8 +46,7 @@ class Articles extends Component {
             {name: 'product', content: pkginfo.name},
             {name: 'keywords', content: pkginfo.keywords},
             {name: 'author', content: pkginfo.author},
-            {name: 'license', content: pkginfo.license},
-            {name: 'sha', content: pkginfo.sha}
+            {name: 'license', content: pkginfo.license}
           ]}
           onChangeClientState={this.handleChangeClientState} />
         <ArticleList articles={articles} />
