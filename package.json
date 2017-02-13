@@ -91,6 +91,8 @@
     "deploy": "npm run build && npm run docker:build",
     "commit": "git cz",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 1",
+    "nw": "npm run build && nw build",
+    "nw:build": "npm run build",
     "docker:build": "docker build --tag react-app -f ./config/docker/Dockerfile . && npm run docker:images",
     "docker:images": "docker images | grep react-app",
     "docker:run": "docker run -dit -p 8081:80 --name react-app react-app:latest",
