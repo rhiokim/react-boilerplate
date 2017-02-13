@@ -75,6 +75,9 @@ master
     \_ photon-with-nwjs (photon + nw)
   \_ semantic-ui
 ```
+
+## Branch specified
+
 ## Screenshot
 * with photon
 ![photon home](https://raw.githubusercontent.com/rhiokim/react-boilerplate/gh-pages/assets/images/photon.png)
