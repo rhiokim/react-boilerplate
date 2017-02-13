@@ -78,6 +78,15 @@ master
 
 ## Branch specified
 
+### Run with nwjs
+
+These commands are required `nwjs` module. So if you get some error on this step, Please install `nwjs` module globally. `npm install -g nwjs` or `yarn global add nwjs`
+
+```
+$ npm run nw    //run nwjs app
+$ npm run build //build app for production
+```
+
 ## Screenshot
 * with photon
 ![photon home](https://raw.githubusercontent.com/rhiokim/react-boilerplate/gh-pages/assets/images/photon.png)
