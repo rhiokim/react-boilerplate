@@ -7,6 +7,7 @@ import createLogger from 'redux-logger';
 
 import articleReducer from '../reducers/article';
 import userReducer from '../reducers/user';
+import contactReducer from '../reducers/contact';
 
 import DevTools from '../DevTools';
 
@@ -20,6 +21,7 @@ const router = routerMiddleware(hashHistory);
 const rootReducer = combineReducers({
   articleReducer: articleReducer,
   userReducer: userReducer,
+  contactReducer: contactReducer,
   routing: routing,
 });
 

@@ -12,8 +12,7 @@
     "width": 800,
     "height": 600,
     "min_width": 800,
-    "min_height": 600,
-    "frame": false
+    "min_height": 600
   },
   "single-instance": true,
   "webkit": {

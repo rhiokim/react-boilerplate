@@ -78,6 +78,9 @@ master
 ```
 
 ## Branch specified
+This branch is an offline first starter kit for developers wanting to create cross platform desktop applications with **NWJS**. It comes complete with a handful of useful tools to help you create killer applications that run on all platforms!
+
+* PouchDB with CouchDB remote replication
 
 ### Run with nwjs
 
