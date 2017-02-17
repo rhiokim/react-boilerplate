@@ -1,4 +1,6 @@
-This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app) and customized a bit.
+This project was bootstrapped with latest [Create React App](https://github.com/facebookincubator/create-react-app) and customized a bit.
+
+And this have some of branch that organazied with libraries that provied modern design concepts such as material, sementic ui and my favor design conpect as well. It's easy to start your new react-app project.
 
 ## Features
 
@@ -15,16 +17,35 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 First, you should clone the repo and install the dependencies.
 
 ```bash
-$ git clone git@github.com:rhiokim/react-boilerplate.git <yourAppName>
+$ git clone git@github.com:rhiokim/react-boilerplate.git <yourAppName> --depth 1
+// (--depth 1) https://git-scm.com/docs/git-clone#git-clone---depthltdepthgt
 $ cd <yourAppName>
-$ npm install
+$ npm install // or yarn
 ```
 
 Then, launch the boilerplate app.
 
 ```bash
-$ npm start
+$ npm start // or yarn start
 ```
+
+Above it's just simple usage.
+
+If you wanna follow upstream changes please follow step.
+And it's my recommand way
+
+1. Create repository for new react-app project
+```bash
+$ make /path/to/new-react-app
+$ cd /path/to/new-react-app
+$ git init
+```
+2. Setup remote configuration, for example github.com
+```bash
+$ git remote add origin git@github.com:ACCOUNT/REPO_NAME.git
+$ git remote add boilerplate git@github.com:rhiokim/react-boilerplate.git
+```
+... Working in progress ...
 
 You should see a new browser tap opening and a title of "React Boilerplate" in http://localhost:3000.
 
@@ -37,34 +58,21 @@ When committing your code, you should use [AngularJS's commit message convention
 ## How to build
 
 ```bash
-$ npm run build
-```
-
-## Run test
-
-```bash
-$ npm test
-```
-
-## Dockerize
-
-```bash
-$ npm run docker:build  // build image
-$ npm run docker:run    // run container
-$ npm run docker:rm     // remove running container
-$ npm run docker        // run build, rm, run at once
+$ npm start // or yarn start
 ```
 
 ## Branch Structure
 ```
 master
-  \_ nw
-    \_ nw-ext (offline first app with pouchdb, etc)
+  \_ nw (it's contain master branch with nwjs env)
+    \_ nw-ext (it's offline first app with pouchdb and some useful module)
   \_ material
   \_ ant-design
   \_ photon
     \_ photon-with-nwjs (photon + nw)
   \_ semantic-ui
+  \_ blueprint (soon)
+  \_ fabric (soon)
 ```
 
 ## Branch specified
