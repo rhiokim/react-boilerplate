@@ -59,12 +59,15 @@ $ npm run docker        // run build, rm, run at once
 ```
 master
   \_ nw
+    \_ nw-ext (offline first app with pouchdb, etc)
   \_ material
   \_ ant-design
   \_ photon
     \_ photon-with-nwjs (photon + nw)
   \_ semantic-ui
 ```
+
+## Branch specified
 
 ## Screenshot
 * with photon
