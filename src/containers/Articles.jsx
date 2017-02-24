@@ -2,11 +2,36 @@ import React, {Component} from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import Helmet from 'react-helmet';
+import {Table} from 'antd';
 
 import pkginfo from '../../package.json';
 
 import * as ArticleActions from '../actions/article';
 import ArticleList from '../components/articles/ArticleList';
+
+const columns = [{
+  title: 'Title',
+  dataIndex: 'title',
+  key: 'id',
+  render: text => <a href="">{text}</a>
+}, {
+  title: 'Author',
+  dataIndex: 'userId',
+  key: 'userId'
+}];
+
+// rowSelection object indicates the need for row selection
+const rowSelection = {
+  onChange(selectedRowKeys, selectedRows) {
+    console.log(`selectedRowKeys: ${selectedRowKeys}`, 'selectedRows: ', selectedRows);
+  },
+  onSelect(record, selected, selectedRows) {
+    console.log(record, selected, selectedRows);
+  },
+  onSelectAll(selected, selectedRows, changeRows) {
+    console.log(selected, selectedRows, changeRows);
+  },
+};
 
 class Articles extends Component {
   constructor(props) {
@@ -16,6 +41,9 @@ class Articles extends Component {
   }
 
   componentWillMount() {
+    this.setState({
+      loading: true
+    })
     this.props.fetchArticles();
   }
 
@@ -23,6 +51,9 @@ class Articles extends Component {
   }
 
   componentWillReceiveProps() {
+    this.setState({
+      loading: false
+    })
   }
 
   handleChangeClientState(newState) {
@@ -31,6 +62,7 @@ class Articles extends Component {
 
   render() {
     const {articles} = this.props;
+    const {loading} = this.state;
     return (
       <div>
         <Helmet
@@ -48,7 +80,11 @@ class Articles extends Component {
             {name: 'license', content: pkginfo.license}
           ]}
           onChangeClientState={this.handleChangeClientState} />
-        <ArticleList articles={articles} />
+        <Table
+          loading={loading}
+          columns={columns}
+          dataSource={articles}
+          expandedRowRender={record => <p>{record.body}</p>} />
       </div>
     );
   }

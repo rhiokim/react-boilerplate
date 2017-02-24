@@ -1,4 +1,5 @@
 import React from 'react';
+import {Table} from 'antd';
 
 export default class Article extends React.Component {
   render() {

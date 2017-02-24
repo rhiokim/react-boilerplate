@@ -7,9 +7,10 @@ import {syncHistoryWithStore} from 'react-router-redux';
 /**
  * Customized CSS for App initilization
  */
-import './assets/css/normalize.css';
-import './assets/less/_.less';
-import './assets/sass/_.scss';
+// import './assets/css/normalize.css';
+// import './assets/less/_.less';
+// import './assets/sass/_.scss';
+import 'antd/dist/antd.css';
 
 import routes from './routes';
 import configureStore from './store/configureStore';
