@@ -1,3 +1,4 @@
+/*eslint-disable no-unused-vars*/
 import React from 'react';
 import {render} from 'react-dom';
 import {Router, hashHistory} from 'react-router';
@@ -10,7 +11,6 @@ import {syncHistoryWithStore} from 'react-router-redux';
 import './assets/css/normalize.css';
 // import './assets/less/_.less';
 // import './assets/sass/_.scss';
-
 import Sys from './nw/system';
 import Menu from './nw/menu/Menu';
 

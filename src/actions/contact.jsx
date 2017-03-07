@@ -1,5 +1,5 @@
 import db from '../api/db';
-import uuid from 'node-uuid';
+import uuid from 'uuid';
 
 export const REQUEST_CONTACTS = 'REQUEST_CONTACTS';
 export const RECEIVE_CONTACTS = 'RECEIVE_CONTACTS';
