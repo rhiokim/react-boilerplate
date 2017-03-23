@@ -1,24 +1,23 @@
+/* @flow */
 import axios from 'axios';
-
-export const REQUEST_USERS = 'REQUEST_USERS';
-export const RECEIVE_USERS = 'RECEIVE_USERS';
+import * as actionTypes from '../constants/actionTypes';
 
 export const requestUsers = () => {
   return {
-    type: REQUEST_USERS
+    type: actionTypes.REQUEST_USERS
   };
 };
 
 const receiveUsers = data => {
   return {
-    type: RECEIVE_USERS,
+    type: actionTypes.RECEIVE_USERS,
     users: data,
     receivedAt: Date.now()
   };
 };
 
 export const fetchUsers = () => {
-  return dispatch => {
+  return (dispatch: Function) => {
     dispatch(requestUsers());
     return axios.get('http://jsonplaceholder.typicode.com/users')
       .then(response => dispatch(receiveUsers(response.data)));
