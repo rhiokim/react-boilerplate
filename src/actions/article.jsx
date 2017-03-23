@@ -2,17 +2,18 @@
 import axios from 'axios';
 import * as actionTypes from '../constants/actionTypes';
 
-export const requestArticles = () => {
+export const requestArticles = (): ArticleAction => {
   return {
-    type: actionTypes.REQUEST_ARTICLES
+    type: actionTypes.REQUEST_ARTICLES,
+    receivedAt: new Date()
   };
 };
 
-const receiveArticles = data => {
+const receiveArticles = (data): ArticleAction => {
   return {
     type: actionTypes.RECEIVE_ARTICLES,
     articles: data,
-    receivedAt: Date.now()
+    receivedAt: new Date()
   };
 };
 
