@@ -9,10 +9,10 @@ export const requestArticles = (): ArticleAction => {
   };
 };
 
-const receiveArticles = (data): ArticleAction => {
+const receiveArticles = (articles: Array<Article>): ArticleAction => {
   return {
     type: actionTypes.RECEIVE_ARTICLES,
-    articles: data,
+    articles: articles,
     receivedAt: new Date()
   };
 };

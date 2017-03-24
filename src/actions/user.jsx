@@ -9,10 +9,10 @@ export const requestUsers = (): UserAction => {
   };
 };
 
-const receiveUsers = (data): UserAction => {
+const receiveUsers = (users: Array<User>): UserAction => {
   return {
     type: actionTypes.RECEIVE_USERS,
-    users: data,
+    users: users,
     receivedAt: new Date()
   };
 };
