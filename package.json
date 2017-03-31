@@ -18,7 +18,7 @@
   "devDependencies": {
     "autoprefixer": "6.7.2",
     "babel-core": "6.22.1",
-    "babel-eslint": "7.1.1",
+    "babel-eslint": "^7.2.0",
     "babel-jest": "18.0.0",
     "babel-loader": "6.2.10",
     "babel-preset-react-app": "^2.1.1",
@@ -34,10 +34,10 @@
     "detect-port": "1.0.1",
     "dotenv": "2.0.0",
     "eslint": "3.16.1",
-    "eslint-config-react-app": "^0.6.1",
+    "eslint-config-react-app": "^0.6.2",
     "eslint-formatter-pretty": "^1.1.0",
     "eslint-loader": "1.6.0",
-    "eslint-plugin-flowtype": "2.21.0",
+    "eslint-plugin-flowtype": "^2.30.4",
     "eslint-plugin-import": "2.0.1",
     "eslint-plugin-jsx-a11y": "4.0.0",
     "eslint-plugin-react": "6.4.1",
@@ -45,6 +45,7 @@
     "file-loader": "0.10.0",
     "filesize": "3.3.0",
     "find-cache-dir": "0.1.1",
+    "flow-bin": "^0.42.0",
     "fs-extra": "0.30.0",
     "git-repo-info": "^1.3.1",
     "gzip-size": "3.0.0",
@@ -94,10 +95,11 @@
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
     "lint": "eslint --format=node_modules/eslint-formatter-pretty 'src/**/*.@(js|jsx)'",
+    "flow": "flow",
     "lint:msg": "validate-commit-msg",
     "deploy": "npm run build && npm run docker:build",
     "commit": "git cz",
-    "precommit": "npm run lint",
+    "precommit": "npm run lint && flow",
     "commitmsg": "npm run lint:msg",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 1",
     "docker:build": "docker build --tag react-app -f ./config/docker/Dockerfile . && npm run docker:images",
@@ -136,7 +138,19 @@
     ]
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "parser": "babel-eslint",
+    "extends": [
+      "plugin:flowtype/recommended",
+      "react-app"
+    ],
+    "plugins": [
+      "flowtype"
+    ],
+    "settings": {
+      "flowtype": {
+        "onlyFilesWithFlowAnnotation": false
+      }
+    }
   },
   "config": {
     "validate-commit-msg": {

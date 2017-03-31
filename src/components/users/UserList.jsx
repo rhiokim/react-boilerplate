@@ -1,9 +1,14 @@
+/* @flow */
 import React from 'react';
 import {Grid, Cell} from 'react-mdl';
 
 import UserItem from './UserItem';
 
 export default class UserList extends React.Component {
+  props: {
+    users: Array<User>
+  };
+
   render() {
     const {users} = this.props;
 
