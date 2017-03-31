@@ -9,6 +9,15 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - Use [eslint-pretty-formatter](https://github.com/sindresorhus/eslint-formatter-pretty) to show results for lint
 - If you installed Docker you are able to use some useful npm run-script to make the docker image
 - Support material design. Please look into `material` branch [react-mdl](https://github.com/react-mdl/react-mdl)
+- Enabled [Flow](http://flowtype.org/) to [using static types in Javascript and React App](https://medium.com/@preethikasireddy/why-use-static-types-in-javascript-part-1-8382da1e0adb)
+
+## Requirement
+
+```bash
+$ brew update
+$ brew install flow
+$ npm i -g flow-typed // or yarn global add flow-typed
+```
 
 ## How to use
 
@@ -17,7 +26,8 @@ First, you should clone the repo and install the dependencies.
 ```bash
 $ git clone git@github.com:rhiokim/react-boilerplate.git <yourAppName>
 $ cd <yourAppName>
-$ npm install
+$ npm install // or yarn
+$ flow-typed install
 ```
 
 Then, launch the boilerplate app.
