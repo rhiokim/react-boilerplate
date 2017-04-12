@@ -38,6 +38,10 @@ declare type User = {
   company: Company;
 };
 
+declare type jwt = {
+  token: string
+}
+
 declare type BaseAction = {
   type: string;
   receivedAt: Date;
@@ -50,3 +54,11 @@ declare type ArticleAction = BaseAction & {
 declare type UserAction = BaseAction & {
   users?: Array<Object>;
 };
+
+
+
+
+declare type AuthState = {
+  token: string;
+  isFetching?: boolean;
+}
