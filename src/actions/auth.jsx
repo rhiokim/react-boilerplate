@@ -1,5 +1,6 @@
 /* @flow */
-import axios from 'axios';
+import api from '../api/auth';
+import jwtDecode from 'jwt-decode';
 import * as actionTypes from '../constants/actionTypes';
 
 const requestLogin = (): BaseAction => {
@@ -24,11 +25,44 @@ const loginError = () => {
   }
 };
 
+const requestLogout = () => {
+  return {
+    type: actionTypes.REQUEST_LOGOUT,
+    receivedAt: new Date()
+  }
+};
+
 export const loginUser = (email: string, password: string) => {
   return (dispatch: Function) => {
     dispatch(requestLogin());
 
-    return axios.get('http://localhost:8082/auth/getToken')
-      .then(response => dispatch(receiveLogin(response.data)));
+    const res = api.post('auth/getToken', {
+      email: email,
+      password: password
+    }, {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
+
+    res.then(response => {
+      const token: string = response.data.token;
+      const decode: any = jwtDecode(token);
+
+      localStorage.setItem('token', token);
+      localStorage.setItem('userInfo', decode);
+
+      dispatch(receiveLogin(response.data));
+    });
+
+    res.catch(error => {
+      dispatch(loginError())
+    });
   };
+};
+
+export const logout = () => {
+  return (dispatch: Function) => {
+    dispatch(requestLogout());
+  }
 };

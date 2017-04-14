@@ -60,5 +60,7 @@ declare type UserAction = BaseAction & {
 
 declare type AuthState = {
   token: string;
-  isFetching?: boolean;
+  userName: string;
+  isAuthenticated: boolean;
+  isAuthenticating: boolean;
 }
