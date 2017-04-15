@@ -36,7 +36,7 @@ export const loginUser = (email: string, password: string) => {
   return (dispatch: Function) => {
     dispatch(requestLogin());
 
-    const res = api.post('auth/getToken', {
+    const res = api.post('/auth/getToken', {
       email: email,
       password: password
     }, {
