@@ -20,7 +20,8 @@ export default (state: AuthState = initial, action: Object): AuthState => {
       state = Object.assign({}, state, {
         isAuthenticating: false,
         isAuthenticated: true,
-        token: action.jwt.token
+        token: action.jwt.token,
+        redirect: action.redirect
       });
       break;
     case actionTypes.REQUEST_LOGOUT:

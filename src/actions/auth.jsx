@@ -10,10 +10,11 @@ const requestLogin = (): BaseAction => {
   };
 };
 
-const receiveLogin = (jwt: jwt): BaseAction => {
+const receiveLogin = (jwt: jwt, redirect: string): BaseAction => {
   return {
     type: actionTypes.SUCCESS_LOGIN,
     jwt: jwt,
+    redirect: redirect,
     receivedAt: new Date()
   };
 };
@@ -32,7 +33,7 @@ const requestLogout = () => {
   }
 };
 
-export const loginUser = (email: string, password: string) => {
+export const loginUser = (email: string, password: string, redirect: string = '/') => {
   return (dispatch: Function) => {
     dispatch(requestLogin());
 
@@ -52,7 +53,7 @@ export const loginUser = (email: string, password: string) => {
       localStorage.setItem('token', token);
       localStorage.setItem('userInfo', decode);
 
-      dispatch(receiveLogin(response.data));
+      dispatch(receiveLogin(response.data, redirect));
     });
 
     res.catch(error => {

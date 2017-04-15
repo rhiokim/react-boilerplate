@@ -30,15 +30,17 @@ class Login extends React.Component {
 
   handleSubmit(e: Event) {
     const {email, password} = this.state;
+    const redirect = this.props.location.query.next
     e.preventDefault();
 
-    this.props.loginUser(email, password);
+    this.props.loginUser(email, password, redirect);
   }
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.isAuthenticated) {
+      console.log(nextProps.redirect)
       //@TODO need to migrate with react-router@v4.x
-      this.props.router.push('/')
+      this.props.router.push(nextProps.redirect)
     }
   }
 
@@ -56,7 +58,8 @@ class Login extends React.Component {
 const mapStateToProps = state => ({
   token: state.authReducer.token,
   isAuthenticated: state.authReducer.isAuthenticated,
-  isAuthenticating: state.authReducer.isAuthenticating
+  isAuthenticating: state.authReducer.isAuthenticating,
+  redirect: state.authReducer.redirect
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators(AuthAction, dispatch);
