@@ -1,36 +1,34 @@
-import React, {Component} from 'react';
-import {bindActionCreators} from 'redux';
-import {connect} from 'react-redux';
-import Helmet from 'react-helmet';
+import React, {Component} from 'react'
+import {bindActionCreators} from 'redux'
+import {connect} from 'react-redux'
+import Helmet from 'react-helmet'
 
-import pkginfo from '../../package.json';
+import pkginfo from '../../package.json'
 
-import * as ArticleActions from '../actions/article';
-import ArticleList from '../components/articles/ArticleList';
+import * as ArticleActions from '../actions/article'
+import ArticleList from '../components/articles/ArticleList'
 
 class Articles extends Component {
-  constructor(props) {
-    super(props);
+  constructor (props) {
+    super(props)
 
-    this.handleChangeClientState = this.handleChangeClientState.bind(this);
+    this.handleChangeClientState = this.handleChangeClientState.bind(this)
   }
 
-  componentWillMount() {
-    this.props.fetchArticles();
+  componentWillMount () {
+    this.props.fetchArticles()
   }
 
-  componentDidMount() {
+  componentDidMount () {}
+
+  componentWillReceiveProps () {}
+
+  handleChangeClientState (newState) {
+    console.log(newState)
   }
 
-  componentWillReceiveProps() {
-  }
-
-  handleChangeClientState(newState) {
-    console.log(newState);
-  }
-
-  render() {
-    const {articles} = this.props;
+  render () {
+    const {articles} = this.props
     return (
       <div>
         <Helmet
@@ -47,17 +45,19 @@ class Articles extends Component {
             {name: 'author', content: pkginfo.author},
             {name: 'license', content: pkginfo.license}
           ]}
-          onChangeClientState={this.handleChangeClientState} />
+          onChangeClientState={this.handleChangeClientState}
+        />
         <ArticleList articles={articles} />
       </div>
-    );
+    )
   }
 }
 
 const mapStateToProps = state => ({
   articles: state.articleReducer.articles
-});
+})
 
-const mapDispatchToProps = dispatch => bindActionCreators(ArticleActions, dispatch);
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(ArticleActions, dispatch)
 
-export default connect(mapStateToProps, mapDispatchToProps)(Articles);
+export default connect(mapStateToProps, mapDispatchToProps)(Articles)
