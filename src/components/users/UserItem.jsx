@@ -1,4 +1,5 @@
 /* @flow */
+/* sample */
 import React from 'react'
 
 export default class UserItem extends React.Component {

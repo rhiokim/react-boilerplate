@@ -1,4 +1,5 @@
 /* @flow */
+/* sample redux action */
 import axios from 'axios'
 import * as actionTypes from '../constants/actionTypes'
 

@@ -1,4 +1,5 @@
 /* @flow */
+/* sample */
 import * as actionTypes from '../constants/actionTypes'
 
 type State = {

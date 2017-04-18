@@ -1,4 +1,5 @@
 /* @flow */
+/* sample */
 import React from 'react'
 
 import UserItem from './UserItem'

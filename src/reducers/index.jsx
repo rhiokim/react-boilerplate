@@ -1,3 +1,4 @@
+/* sample */
 import articleReducer from './article'
 import userReducer from './user'
 import authReducer from './auth'
