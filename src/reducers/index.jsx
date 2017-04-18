@@ -1,6 +1,6 @@
-import articleReducer from './article';
-import userReducer from './user';
-import authReducer from './auth';
+import articleReducer from './article'
+import userReducer from './user'
+import authReducer from './auth'
 
 export default {
   articleReducer: articleReducer,

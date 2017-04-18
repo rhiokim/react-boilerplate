@@ -1,19 +1,19 @@
-import React from 'react';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+import React from 'react'
+import Header from '../components/Header'
+import Footer from '../components/Footer'
 
-import './App.css';
+import './App.css'
 
 export default class App extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor (props) {
+    super(props)
 
     this.state = {
       totalUserCount: 0
-    };
+    }
   }
 
-  render() {
+  render () {
     return (
       <div>
         <Header />
@@ -21,15 +21,13 @@ export default class App extends React.Component {
           {this.props.children}
         </div>
         <Footer />
-        {
-          (() => {
-            if (process.env.NODE_ENV === 'development') {
-              const DevTools = require('../DevTools').default;
-              return <DevTools />;
-            }
-          })()
-        }
+        {(() => {
+          if (process.env.NODE_ENV === 'development') {
+            const DevTools = require('../DevTools').default
+            return <DevTools />
+          }
+        })()}
       </div>
-    );
+    )
   }
 }

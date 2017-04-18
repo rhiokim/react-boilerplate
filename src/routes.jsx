@@ -1,14 +1,14 @@
-import React from 'react';
-import {Route, IndexRoute} from 'react-router';
+import React from 'react'
+import {Route, IndexRoute} from 'react-router'
 
-import App from './containers/App';
-import Home from './containers/Home';
-import Users from './containers/Users';
-import Articles from './containers/Articles';
-import Login from './containers/Login';
-import Admin from './containers/Admin';
+import App from './containers/App'
+import Home from './containers/Home'
+import Users from './containers/Users'
+import Articles from './containers/Articles'
+import Login from './containers/Login'
+import Admin from './containers/Admin'
 
-import {requireAuthentication} from './helper/AuthenticatedComponent';
+import {requireAuthentication} from './helper/AuthenticatedComponent'
 
 export default (
   <Route path="/" component={App}>
@@ -18,4 +18,4 @@ export default (
     <Route path="/login" component={Login} />
     <Route path="/admin" component={requireAuthentication(Admin)} />
   </Route>
-);
+)

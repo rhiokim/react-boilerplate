@@ -1,5 +1,3 @@
-import React from 'react';
+import React from 'react'
 
-export default () => (
-  <div>protected admin page</div>
-);
+export default () => <div>protected admin page</div>
