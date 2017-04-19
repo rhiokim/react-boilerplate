@@ -3,10 +3,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Features
 
 - Use [Commitizen](https://github.com/commitizen/cz-cli) to produce commit message according to [AngularJS convention](https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md#-git-commit-guidelines)
-- Support git hook `pre-commit` used to lint and test your code
+- Support git hook `precommit` used to lint and test your code
 - Use [conventional-changelog](https://github.com/ajoslin/conventional-changelog) to generate `CHANGELOG.md`
-- Support git hook `commit-msg` used to lint your [commit message](https://github.com/kentcdodds/validate-commit-msg)
+- Support git hook `commitmsg` used to lint your [commit message](https://github.com/kentcdodds/validate-commit-msg)
 - Use [eslint-pretty-formatter](https://github.com/sindresorhus/eslint-formatter-pretty) to show results for lint
+- Use [prettier-eslint](https://github.com/prettier/prettier) to format ES2017, JSX and flow automatically
 - If you installed Docker you are able to use some useful npm run-script to make the docker image
 - Support material design. Please look into `material` branch [react-mdl](https://github.com/react-mdl/react-mdl)
 - Enabled [Flow](http://flowtype.org/) to [using static types in Javascript and React App](https://medium.com/@preethikasireddy/why-use-static-types-in-javascript-part-1-8382da1e0adb)
@@ -72,6 +73,7 @@ master
     \_ nw-ext (offline first app with pouchdb, etc)
   \_ material
   \_ ant-design
+  \_ jwt (JWT demo)
   \_ photon
     \_ photon-with-nwjs (photon + nw)
   \_ semantic-ui
