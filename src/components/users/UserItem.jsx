@@ -1,5 +1,6 @@
 /* @flow */
-import React from 'react';
+/* sample */
+import React from 'react'
 
 export default class UserItem extends React.Component {
   props: {
@@ -12,13 +13,11 @@ export default class UserItem extends React.Component {
     website: string,
     company: Company,
     onClick?: (event: Event) => void
-  };
+  }
 
-  render() {
-    const {name, email} = this.props;
+  render () {
+    const {name, email} = this.props
 
-    return (
-      <li onClick={this.props.onClick}>{name}: {email}</li>
-    );
+    return <li onClick={this.props.onClick}>{name}: {email}</li>
   }
 }

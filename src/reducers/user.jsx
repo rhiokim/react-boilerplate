@@ -1,33 +1,29 @@
 /* @flow */
-
-type State = {
-  users: Array<User>;
-  isFetching?: boolean;
-}
-
-import * as actionTypes from '../constants/actionTypes';
+/* sample */
+import * as actionTypes from '../constants/actionTypes'
+import type {UserState} from './user.d'
 
 const initial = {
   isFetching: false,
   users: []
-};
+}
 
-export default (state: State = initial, action: Object): State => {
+export default (state: UserState = initial, action: Object): UserState => {
   switch (action.type) {
     case actionTypes.REQUEST_USERS:
       state = Object.assign({}, state, {
         isFetching: true
-      });
-      break;
+      })
+      break
     case actionTypes.RECEIVE_USERS:
       state = Object.assign({}, state, {
         isFetching: false,
         users: action.users
-      });
-      break;
+      })
+      break
     default:
-      break;
+      break
   }
 
-  return state;
-};
+  return state
+}
