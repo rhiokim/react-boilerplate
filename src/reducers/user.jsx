@@ -1,18 +1,14 @@
 /* @flow */
 /* sample */
 import * as actionTypes from '../constants/actionTypes'
-
-type State = {
-  users: Array<User>,
-  isFetching?: boolean
-}
+import type {UserState} from './user.d'
 
 const initial = {
   isFetching: false,
   users: []
 }
 
-export default (state: State = initial, action: Object): State => {
+export default (state: UserState = initial, action: Object): UserState => {
   switch (action.type) {
     case actionTypes.REQUEST_USERS:
       state = Object.assign({}, state, {
