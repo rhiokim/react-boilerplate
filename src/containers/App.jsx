@@ -1,6 +1,4 @@
 import React from 'react'
-import Header from '../components/Header'
-import Footer from '../components/Footer'
 
 import './App.css'
 
@@ -16,11 +14,7 @@ export default class App extends React.Component {
   render () {
     return (
       <div>
-        <Header />
-        <div className="route">
-          {this.props.children}
-        </div>
-        <Footer />
+        {this.props.children}
         {(() => {
           if (process.env.NODE_ENV === 'development') {
             const DevTools = require('../DevTools').default

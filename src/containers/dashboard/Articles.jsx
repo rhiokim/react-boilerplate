@@ -1,14 +1,14 @@
 // @flow
 /* sample */
-import React, {Component} from 'react'
+import React from 'react'
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
 
-import type {AppState} from '../reducers'
-import * as ArticleActions from '../actions/article'
-import ArticleList from '../components/articles/ArticleList'
+import type {AppState} from '../../reducers'
+import * as ArticleActions from '../../actions/article'
+import ArticleList from '../../components/articles/ArticleList'
 
-class Articles extends Component {
+class Articles extends React.Component {
   componentWillMount () {
     this.props.fetchArticles()
   }
