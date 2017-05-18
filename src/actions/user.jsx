@@ -1,26 +1,28 @@
-import axios from 'axios';
+/* @flow */
+/* sample redux action */
+import axios from 'axios'
+import * as actionTypes from '../constants/actionTypes'
 
-export const REQUEST_USERS = 'REQUEST_USERS';
-export const RECEIVE_USERS = 'RECEIVE_USERS';
-
-export const requestUsers = () => {
+export const requestUsers = (): UserAction => {
   return {
-    type: REQUEST_USERS
-  };
-};
+    type: actionTypes.REQUEST_USERS,
+    receivedAt: new Date()
+  }
+}
 
-const receiveUsers = data => {
+const receiveUsers = (users: Array<User>): UserAction => {
   return {
-    type: RECEIVE_USERS,
-    users: data,
-    receivedAt: Date.now()
-  };
-};
+    type: actionTypes.RECEIVE_USERS,
+    users: users,
+    receivedAt: new Date()
+  }
+}
 
 export const fetchUsers = () => {
-  return dispatch => {
-    dispatch(requestUsers());
-    return axios.get('http://jsonplaceholder.typicode.com/users')
-      .then(response => dispatch(receiveUsers(response.data)));
-  };
-};
+  return (dispatch: Function) => {
+    dispatch(requestUsers())
+    return axios
+      .get('http://jsonplaceholder.typicode.com/users')
+      .then(response => dispatch(receiveUsers(response.data)))
+  }
+}

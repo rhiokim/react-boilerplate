@@ -1,10 +1,12 @@
-import {Component, PropTypes} from 'react';
+/* sample */
+import {Component} from 'react'
+import PropTypes from 'prop-types'
 
 export default class Checkbox extends Component {
-  constructor(props) {
-    super(props);
+  constructor (props) {
+    super(props)
 
-    console.log('not implement yet');
+    console.log('not implement yet')
   }
 }
 
@@ -15,8 +17,8 @@ Checkbox.propTypes = {
   className: PropTypes.string,
   defaultChecked: PropTypes.oneOfType([PropTypes.number, PropTypes.bool]),
   checked: PropTypes.oneOfType([PropTypes.number, PropTypes.bool]),
-  onChange: PropTypes.func,
-};
+  onChange: PropTypes.func
+}
 
 Checkbox.defaultProps = {
   prefixCls: 'rc-checkbox',
@@ -24,5 +26,5 @@ Checkbox.defaultProps = {
   type: 'checkbox',
   className: '',
   defaultChecked: false,
-  onChange: () => {},
-};
+  onChange: () => {}
+}

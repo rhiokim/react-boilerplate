@@ -1,2 +1,3 @@
-export Button from './button/Button';
-export Checkbox from './checkbox/Checkbox';
+/* sample */
+export Button from './button/Button'
+export Checkbox from './checkbox/Checkbox'

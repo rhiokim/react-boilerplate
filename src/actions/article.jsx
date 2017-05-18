@@ -1,26 +1,28 @@
-import axios from 'axios';
+/* @flow */
+/* sample redux action */
+import axios from 'axios'
+import * as actionTypes from '../constants/actionTypes'
 
-export const REQUEST_ARTICLES = 'REQUEST_ARTICLES';
-export const RECEIVE_ARTICLES = 'RECEIVE_ARTICLES';
-
-export const requestArticles = () => {
+export const requestArticles = (): ArticleAction => {
   return {
-    type: REQUEST_ARTICLES
-  };
-};
+    type: actionTypes.REQUEST_ARTICLES,
+    receivedAt: new Date()
+  }
+}
 
-const receiveArticles = data => {
+const receiveArticles = (articles: Array<Article>): ArticleAction => {
   return {
-    type: RECEIVE_ARTICLES,
-    articles: data,
-    receivedAt: Date.now()
-  };
-};
+    type: actionTypes.RECEIVE_ARTICLES,
+    articles: articles,
+    receivedAt: new Date()
+  }
+}
 
 export const fetchArticles = () => {
-  return dispatch => {
-    dispatch(requestArticles());
-    return axios.get('http://jsonplaceholder.typicode.com/posts')
-      .then(response => dispatch(receiveArticles(response.data)));
-  };
-};
+  return (dispatch: Function) => {
+    dispatch(requestArticles())
+    return axios
+      .get('http://jsonplaceholder.typicode.com/posts')
+      .then(response => dispatch(receiveArticles(response.data)))
+  }
+}

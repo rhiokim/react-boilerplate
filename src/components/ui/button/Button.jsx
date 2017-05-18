@@ -1,30 +1,29 @@
 // ref - https://github.com/react-component/checkbox/blob/master/src/Checkbox.jsx
-import React, {Component} from 'react';
+/* sample */
+import React, {Component} from 'react'
 
 export default class Header extends Component {
-  constructor(props) {
-    super(props);
+  constructor (props) {
+    super(props)
 
-    this.handleClick = this.handleClick.bind(this);
+    this.handleClick = this.handleClick.bind(this)
   }
 
-  handleClick(e) {
+  handleClick (e) {
     this.props.onClick({
       target: {...this.props},
-      stopPropagation() {
-        e.stopPropagation();
+      stopPropagation () {
+        e.stopPropagation()
       },
-      preventDefault() {
-        e.preventDefault();
+      preventDefault () {
+        e.preventDefault()
       }
-    });
+    })
   }
 
-  render() {
-    const props = {...this.props};
+  render () {
+    const props = {...this.props}
 
-    return (
-      <button {...props} onClick={this.handleClick}>{props.value}</button>
-    );
+    return <button {...props} onClick={this.handleClick}>{props.value}</button>
   }
 }
