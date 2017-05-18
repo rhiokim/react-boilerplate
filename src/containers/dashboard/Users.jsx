@@ -4,9 +4,9 @@ import React from 'react'
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
 
-import type {AppState} from '../reducers'
-import * as UserActions from '../actions/user'
-import UserList from '../components/users/UserList'
+import type {AppState} from '../../reducers'
+import * as UserActions from '../../actions/user'
+import UserList from '../../components/users/UserList'
 
 class Users extends React.Component {
   componentWillMount () {
