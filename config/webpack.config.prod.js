@@ -134,6 +134,7 @@ module.exports = {
           /\.html$/,
           /\.(js|jsx)$/,
           /\.(css|less)$/,
+          /\.scss$/,
           /\.json$/,
           /\.bmp$/,
           /\.gif$/,
@@ -217,6 +218,21 @@ module.exports = {
         ),
         // Note: this won't work without `new ExtractTextPlugin()` in `plugins`.
       },
+      {
+        test: /\.scss$/,
+        loader: ExtractTextPlugin.extract(
+          Object.assign({
+            use: [{
+                loader: "css-loader"
+            }, {
+                loader: "sass-loader"
+            }],
+            // use style-loader in development
+            fallback: "style-loader"
+          },
+          extractTextPluginOptions
+        ))
+      }
       // ** STOP ** Are you adding a new loader?
       // Remember to add the new extension(s) to the "file" loader exclusion list.
     ],
