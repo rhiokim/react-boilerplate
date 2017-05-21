@@ -3,9 +3,9 @@
 // jest.unmock('../App.jsx');
 
 import React from 'react'
-import {shallow} from 'enzyme'
+import { shallow } from 'enzyme'
 import expect from 'expect'
-import {Link} from 'react-router'
+import { Link } from 'react-router'
 
 import Header from '../Header.jsx'
 

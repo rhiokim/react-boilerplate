@@ -1,5 +1,5 @@
 /* sample */
-import {Component} from 'react'
+import { Component } from 'react'
 import PropTypes from 'prop-types'
 
 export default class Checkbox extends Component {

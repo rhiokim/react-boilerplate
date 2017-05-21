@@ -1,10 +1,10 @@
 // @flow
 /* sample */
 import React from 'react'
-import {bindActionCreators} from 'redux'
-import {connect} from 'react-redux'
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
 
-import type {AppState} from '../../reducers'
+import type { AppState } from '../../reducers'
 import * as UserActions from '../../actions/user'
 import UserList from '../../components/users/UserList'
 
@@ -18,7 +18,7 @@ class Users extends React.Component {
   }
 
   render () {
-    const {users} = this.props
+    const { users } = this.props
     return (
       <div>
         <UserList users={users} />

@@ -1,8 +1,8 @@
 import React from 'react'
-import {render} from 'react-dom'
-import {Router, hashHistory} from 'react-router'
-import {Provider} from 'react-redux'
-import {syncHistoryWithStore} from 'react-router-redux'
+import { render } from 'react-dom'
+import { Router, hashHistory } from 'react-router'
+import { Provider } from 'react-redux'
+import { syncHistoryWithStore } from 'react-router-redux'
 
 /**
  * Customized CSS for App initilization

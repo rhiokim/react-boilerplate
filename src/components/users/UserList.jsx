@@ -10,7 +10,7 @@ export default class UserList extends React.Component {
   }
 
   render () {
-    const {users} = this.props
+    const { users } = this.props
 
     return (
       <div className="container">

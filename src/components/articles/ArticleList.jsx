@@ -5,7 +5,7 @@ import Article from './Article'
 
 export default class ArticleList extends React.Component {
   render () {
-    const {articles} = this.props
+    const { articles } = this.props
 
     return (
       <div className="container">

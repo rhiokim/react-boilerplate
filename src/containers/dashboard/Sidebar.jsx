@@ -1,7 +1,7 @@
 import React from 'react'
-import {Link} from 'react-router'
+import { Link } from 'react-router'
 
-const Sidebar = ({text}) => (
+const Sidebar = ({ text }) => (
   <div>
     <h3>SideBar</h3>
     {text}

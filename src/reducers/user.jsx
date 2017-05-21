@@ -1,7 +1,7 @@
 /* @flow */
 /* sample */
 import * as actionTypes from '../constants/actionTypes'
-import type {UserState} from './user.d'
+import type { UserState } from './user.d'
 
 const initial = {
   isFetching: false,

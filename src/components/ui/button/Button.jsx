@@ -1,6 +1,6 @@
 // ref - https://github.com/react-component/checkbox/blob/master/src/Checkbox.jsx
 /* sample */
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 
 export default class Header extends Component {
   constructor (props) {
@@ -11,7 +11,7 @@ export default class Header extends Component {
 
   handleClick (e) {
     this.props.onClick({
-      target: {...this.props},
+      target: { ...this.props },
       stopPropagation () {
         e.stopPropagation()
       },
@@ -22,7 +22,7 @@ export default class Header extends Component {
   }
 
   render () {
-    const props = {...this.props}
+    const props = { ...this.props }
 
     return <button {...props} onClick={this.handleClick}>{props.value}</button>
   }
